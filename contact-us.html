@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="contact.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+  body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #e3f4ff;
+}
+
+header {
+  background-color: #cceeff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* === Main Section === */
+main {
+  padding: 40px 20px;
+}
+
+/* === Contact Section === */
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+  margin-left: 5%;
+}
+
+.form-container {
+  flex: 0 0 36%;
+  min-width: 300px;
+  max-width: 380px;
+}
+
+.form-container h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #ff5733;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: #ff5733;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* === Info/Map Section === */
+.info-container {
+  flex: 0 0 60%;
+  min-width: 300px;
+}
+
+.map iframe {
+  width: 100%;
+  height: 260px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* === Contact Info === */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.contact-info li {
+  margin: 10px 0;
+}
+
+.contact-info i {
+  margin-right: 8px;
+  color: #333;
+}
+
+/* === Social Icons === */
+.socials {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.socials i {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+/* === About Section === */
+.about-section {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.about-section h2 {
+  margin-bottom: 15px;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+/* === Footer === */
+footer {
+  background-color: #cceeff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+  }
+
+  .form-container,
+  .info-container {
+    flex: 1 1 100%;
+  }
+
+  .map iframe {
+    height: 200px;
+  }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">Latino Dance School</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Courses</a>
+      <a href="#">Schedule</a>
+      <a href="#">Gallery</a>
+      <a href="#">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <div class="form-container">
+        <h1>Contact <span class="highlight">us</span></h1>
+        <form>
+          <input type="text" placeholder="Name" required />
+          <input type="email" placeholder="Email" required />
+          <textarea placeholder="Message" rows="5" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+
+      <div class="info-container">
+        <div class="map">
+          <iframe src="https://maps.google.com/maps?q=Skopje&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
+        </div>
+        <ul class="contact-info">
+          <li><i class="fas fa-map-marker-alt"></i> Vero Mall, 1st floor, Skopje</li>
+          <li><i class="fas fa-user"></i> Марта Анчевска - 088 / 503 193</li>
+          <li><i class="fas fa-user"></i> Мартина Блажевска - 078 / 612 724</li>
+          <li><i class="fas fa-envelope"></i> clubmambo@macmail.cg</li>
+        </ul>
+        <div class="socials">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-youtube"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>About Us</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2023 Latino Dance School</p>
+    <p>Follow us on social media!</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+</body>
+</html>
