@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Courses</title>
+  <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+  <header>
+    <div class="logo">Latino Dance School</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a>Courses</a>
+      <a href="#">Schedule</a>
+      <a href="#">Gallery</a>
+      <a href="contact-us.html">Contact Us</a>
+    </nav>
+    <style>
+        body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #e3f4ff;
+}
+
+/* Header */
+header {
+  background-color: #cceeff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* Courses Grid */
+main {
+  padding: 40px 20px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.course-card {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.course-image {
+  background-color: #dcdcdc;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  font-size: 14px;
+  padding: 10px;
+  text-align: center;
+}
+
+.course-info {
+  padding: 10px 15px;
+  background-color: #e9f7ff;
+}
+
+.course-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.signup {
+  text-decoration: none;
+  color: #0044cc;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background-color: #cceeff;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  margin-top: 40px;
+}
+
+footer a {
+  text-decoration: none;
+  color: black;
+}
+    </style>
+  </header>
+
+  <main>
+    <section class="courses-grid">
+      <!-- Repeat for each course -->
+      <div class="course-card">
+        <div class="course-image">Placeholder and Teachers</div>
+        <div class="course-info">
+          <div class="course-title">Bachata Dance</div>
+          <div class="course-meta">
+            <span>Bachata</span>
+            <span>All Levels Welcome</span>
+            <a href="#" class="signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-image">Placeholder and Teachers</div>
+        <div class="course-info">
+          <div class="course-title">Bachata Dance</div>
+          <div class="course-meta">
+            <span>Bachata</span>
+            <span>All Levels Welcome</span>
+            <a href="#" class="signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add additional cards here (you can repeat or loop dynamically) -->
+      <div class="course-card">
+        <div class="course-image">Sasha Bane</div>
+        <div class="course-info">
+          <div class="course-title">Bachata Dance</div>
+          <div class="course-meta">
+            <span>Bachata</span>
+            <span>All Levels Welcome</span>
+            <a href="#" class="signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-image">Placeholder and Teachers</div>
+        <div class="course-info">
+          <div class="course-title">Bachata Dance</div>
+          <div class="course-meta">
+            <span>Bachata</span>
+            <span>All Levels Welcome</span>
+            <a href="#" class="signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-image">Bachata Dance</div>
+        <div class="course-info">
+          <div class="course-title">Bachata Dance</div>
+          <div class="course-meta">
+            <span>Bachata</span>
+            <span>All Levels Welcome</span>
+            <a href="#" class="signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-image">Bachata Dance</div>
+        <div class="course-info">
+          <div class="course-title">Bachata Dance</div>
+          <div class="course-meta">
+            <span>Bachata</span>
+            <span>All Levels Welcome</span>
+            <a href="#" class="signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2023 Latino Dance School</p>
+    <p>Follow us on social media!</p>
+    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+  </footer>
+</body>
+</html>
