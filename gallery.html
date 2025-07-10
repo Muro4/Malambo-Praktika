@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery · Latino Dance School</title>
+
+  <style>
+    /* ---------- Shared styles (copied from other pages) ---------- */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e3f4ff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #cceeff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+    header .logo { font-weight: bold; font-size: 1.2rem; }
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #000;
+    }
+    nav a.active { font-weight: bold; color: #ff5733; }
+
+    footer {
+      background-color: #cceeff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    footer a { text-decoration: none; color: #000; margin: 0 10px; }
+
+    /* ---------- Gallery page styles ---------- */
+    main {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    h1.page-title {
+      font-size: 2rem;
+      color: #063b64;
+      margin-bottom: 30px;
+    }
+    .gallery-grid {
+      width: min(1200px, 95%);
+      margin-inline: auto;
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .placeholder-img {
+      background-color: #d9d9d9;
+      border-radius: 10px;
+      aspect-ratio: 4 / 3;          /* keeps 4:3 ratio boxes */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="logo">Latino Dance School</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <h1 class="page-title">Dance Moments Gallery</h1>
+
+    <div class="gallery-grid">
+      <!-- 12 gray placeholders (replace background with real images) -->
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+      <div class="placeholder-img"></div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2023 Latino Dance School</p>
+    <p>Follow us on social media!</p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
+    </p>
+  </footer>
+</body>
+</html>
