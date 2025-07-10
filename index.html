@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malambo Dance School</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#333;background:#e9f5ff}
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1200px,90%);margin-inline:auto}
+    .btn-primary{display:inline-block;padding:.75rem 1.5rem;background:#ff6400;color:#fff;border-radius:4px;font-weight:600;transition:background .2s}
+    .btn-primary:hover{background:#e95a00}
+    .section-title{font-size:1.75rem;font-weight:700;margin-bottom:1rem}
+    header{background:#ffffffaa;backdrop-filter:blur(10px);position:sticky;top:0;z-index:100}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
+    .nav-links{display:flex;gap:1.5rem;font-weight:500}
+    .nav-links a:hover{color:#ff6400}
+    .hero{position:relative;padding:4rem 0 6rem;overflow:hidden}
+    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,#00ffd0,#0064ff 60%,transparent 70%);opacity:.55;z-index:-1}
+    .hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:center;gap:3rem}
+    .hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem;font-weight:800;color:#00396b}
+    .hero p{margin-bottom:1.5rem;max-width:35ch}
+    .hero .visual{width:100%;height:220px;background:#cfe3ff;border-radius:8px}
+    /* classes slider */
+    .classes{padding:4rem 0;position:relative}
+    .slider-wrapper{position:relative}
+    .arrow-btn{position:absolute;top:45%;transform:translateY(-50%);background:#fff;border:none;width:40px;height:40px;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,.1);cursor:pointer;display:grid;place-items:center;font-size:1.5rem;color:#00396b;transition:background .2s;z-index:5}
+    .arrow-btn:hover{background:#ff6400;color:#fff}
+    .arrow-left{left:-20px}
+    .arrow-right{right:-20px}
+    .card-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:.5rem}
+    .card-track::-webkit-scrollbar{display:none}
+    .card{min-width:280px;flex:0 0 auto;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.05);overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column}
+    .thumb{height:140px;background:#d7e8ff}
+    .card-content{padding:1rem;flex:1}
+    .card-title{font-size:1.1rem;font-weight:700;margin-bottom:.25rem;color:#00396b}
+    .card-meta{font-size:.85rem;color:#555}
+    /* events */
+    .events{padding:4rem 0 2rem;text-align:center}
+    .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2rem}
+    .event-card{background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.05);padding:1.5rem}
+    .event-card .icon{font-size:2.5rem;margin-bottom:.5rem}
+    .event-title{font-weight:700;margin-bottom:.25rem}
+    /* testimonials */
+    .testimonials{padding:4rem 0;text-align:center}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:2rem}
+    .testimonial-card{background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.05);padding:1.5rem}
+    .testimonial-info{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+    .testimonial-info .avatar{width:40px;height:40px;border-radius:50%;background:#cfe3ff}
+    .stars{font-size:.9rem;color:#ffb400;margin-bottom:.5rem}
+    /* about */
+    .about{padding:4rem 0}
+    .about p{max-width:60ch}
+    /* footer */
+    footer{background:#c5e1ff;padding:3rem 0 1rem;text-align:center;font-size:.85rem;color:#002c55}
+    footer .foot-links{display:flex;justify-content:center;gap:1.5rem;margin:1rem 0}
+    /* media */
+    @media (width>900px){.hero-grid{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo"><img src="https://via.placeholder.com/120x40?text=Rhythmix" alt="Rhythmix Logo"></a>
+        <div class="nav-links"><a href="#classes">Classes</a><a href="#events">Events</a><a href="#testimonials">Testimonials</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      </nav>
+    </div>
+  </header>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <h1>Discover the Rhythm!</h1>
+        <p>Join our vibrant dance community and learn from world‑class instructors.</p>
+        <a href="#" class="btn-primary">Sign Up</a>
+      </div>
+      <div class="visual"></div>
+    </div>
+  </section>
+  <!-- classes slider -->
+  <section class="classes" id="classes">
+    <div class="container">
+      <h2 class="section-title">Popular Classes</h2>
+      <div class="slider-wrapper">
+        <button class="arrow-btn arrow-left" aria-label="Previous">&#8249;</button>
+        <div class="card-track" id="classTrack">
+          <article class="card"><div class="thumb"></div><div class="card-content"><h3 class="card-title">Hip‑Hop Basics</h3><p class="card-meta">All Levels • Weekdays</p></div></article>
+          <article class="card"><div class="thumb"></div><div class="card-content"><h3 class="card-title">Salsa Essentials</h3><p class="card-meta">All Levels • Weeknights</p></div></article>
+          <article class="card"><div class="thumb"></div><div class="card-content"><h3 class="card-title">Ballet Foundations</h3><p class="card-meta">All Levels • Weekends</p></div></article>
+          <article class="card"><div class="thumb"></div><div class="card-content"><h3 class="card-title">Contemporary Flow</h3><p class="card-meta">Intermediate • Tue & Thu</p></div></article>
+          <article class="card"><div class="thumb"></div><div class="card-content"><h3 class="card-title">Jazz Funk</h3><p class="card-meta">Beginner • Fridays</p></div></article>
+          <article class="card"><div class="thumb"></div><div class="card-content"><h3 class="card-title">Tap Dance</h3><p class="card-meta">All Levels • Sundays</p></div></article>
+        </div>
+        <button class="arrow-btn arrow-right" aria-label="Next">&#8250;</button>
+      </div>
+    </div>
+  </section>
+  <!-- events -->
+  <section class="events" id="events">
+    <div class="container"><h2 class="section-title">Upcoming Events</h2>
+      <div class="events-grid">
+        <div class="event-card"><div class="icon">🎭</div><h3 class="event-title">Stage Performance</h3><p>Date: Dec 15, 2023</p></div>
+        <div class="event-card"><div class="icon">💃</div><h3 class="event-title">Dance Night</h3><p>Date: Nov 25, 2023</p></div>
+        <div class="event-card"><div class="icon">🎶</div><h3 class="event-title">Musical Evening</h3><p>Date: Jan 10, 2024</p></div>
+        <div class="event-card"><div class="icon">🌐</div><h3 class="event-title">Cultural Festival</h3><p>Date: Feb 14, 2024</p></div>
+      </div>
+    </div>
+  </section>
+  <!-- testimonials -->
+  <section class="testimonials" id="testimonials">
+    <div class="container"><h2 class="section-title">What Our Students Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card"><div class="testimonial-info"><div class="avatar"></div><strong>Jane D.</strong></div><div class="stars">★★★★★</div><p>The classes are energetic and fun! I've learned so much.</p></div>
+        <div class="testimonial-card"><div class="testimonial-info"><div class="avatar"></div><strong>Michael S.</strong></div><div class="stars">★★★★★</div><p>Amazing instructors and a friendly community.</p></div>
+        <div class="testimonial-card"><div class="testimonial-info"><div class="avatar"></div><strong>Linda K.</strong></div><div class="stars">★★★★★</div><p>Great place to start and grow your dance skills.</p></div>
+      </div>
+    </div>
+  </section>
+  <!-- about -->
+  <section class="about" id="about">
+    <div class="container"><h2 class="section-title">About Us</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis eu eleifend tempor facilisi interdum. Vestibulum vel laoreet lorem, ut viverra lacus. Aliquam quis nunc auctor, posuere dui eget, tempor metus. Cras at aliquet dolor. Donec venenatis interdum felis, non congue sapien ultrices in.</p></div>
+  </section>
+  <!-- footer -->
+  <footer id="contact">
+    <div class="container"><a href="#home" class="logo"><img src="https://via.placeholder.com/100x30?text=Rhythmix" alt="Rhythmix logo"></a>
+      <div class="foot-links"><a href="#">Follow us on social media</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      <p>© 2025 Rhythmix Dance School</p>
+    </div>
+  </footer>
+
+  <script>
+    const track=document.getElementById('classTrack');
+    const btnPrev=document.querySelector('.arrow-left');
+    const btnNext=document.querySelector('.arrow-right');
+
+    function scrollByCard(dir){
+      const cardWidth=track.querySelector('.card').offsetWidth+24; // 24 = gap
+      track.scrollBy({left:dir*cardWidth,behavior:'smooth'});
+    }
+    btnPrev.addEventListener('click',()=>scrollByCard(-1));
+    btnNext.addEventListener('click',()=>scrollByCard(1));
+  </script>
+</body>
+</html>
