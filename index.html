@@ -5,67 +5,311 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Malambo Dance School</title>
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;color:#333;background:#e9f5ff}
-    img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
-    .container{width:min(1200px,90%);margin-inline:auto}
-    .btn-primary{display:inline-block;padding:.75rem 1.5rem;background:#ff6400;color:#fff;border-radius:4px;font-weight:600;transition:background .2s}
-    .btn-primary:hover{background:#e95a00}
-    .section-title{font-size:1.75rem;font-weight:700;margin-bottom:1rem}
-    header{background:#ffffffaa;backdrop-filter:blur(10px);position:sticky;top:0;z-index:100}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 0}
-    .nav-links{display:flex;gap:1.5rem;font-weight:500}
-    .nav-links a:hover{color:#ff6400}
-    .hero{position:relative;padding:4rem 0 6rem;overflow:hidden}
-    .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,#00ffd0,#0064ff 60%,transparent 70%);opacity:.55;z-index:-1}
-    .hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:center;gap:3rem}
-    .hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:1rem;font-weight:800;color:#00396b}
-    .hero p{margin-bottom:1.5rem;max-width:35ch}
-    .hero .visual{width:100%;height:220px;background:#cfe3ff;border-radius:8px}
-    /* classes slider */
-    .classes{padding:4rem 0;position:relative}
-    .slider-wrapper{position:relative}
-    .arrow-btn{position:absolute;top:45%;transform:translateY(-50%);background:#fff;border:none;width:40px;height:40px;border-radius:50%;box-shadow:0 4px 10px rgba(0,0,0,.1);cursor:pointer;display:grid;place-items:center;font-size:1.5rem;color:#00396b;transition:background .2s;z-index:5}
-    .arrow-btn:hover{background:#ff6400;color:#fff}
-    .arrow-left{left:-20px}
-    .arrow-right{right:-20px}
-    .card-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-behavior:smooth;padding-bottom:.5rem}
-    .card-track::-webkit-scrollbar{height: 8px;}
-    .card-track::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 4px;
-}
+    
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-.card-track::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-    .card{min-width:280px;flex:0 0 auto;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.05);overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column}
-    .thumb{height:140px;background:#d7e8ff}
-    .card-content{padding:1rem;flex:1}
-    .card-title{font-size:1.1rem;font-weight:700;margin-bottom:.25rem;color:#00396b}
-    .card-meta{font-size:.85rem;color:#555}
-    /* events */
-    .events{padding:4rem 0 2rem;text-align:center}
-    .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:2rem}
-    .event-card{background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.05);padding:1.5rem}
-    .event-card .icon{font-size:2.5rem;margin-bottom:.5rem}
-    .event-title{font-weight:700;margin-bottom:.25rem}
-    /* testimonials */
-    .testimonials{padding:4rem 0;text-align:center}
-    .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:2rem}
-    .testimonial-card{background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.05);padding:1.5rem}
-    .testimonial-info{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
-    .testimonial-info .avatar{width:40px;height:40px;border-radius:50%;background:#cfe3ff}
-    .stars{font-size:.9rem;color:#ffb400;margin-bottom:.5rem}
-    /* about */
-    .about{padding:4rem 0}
-    .about p{max-width:60ch}
-    /* footer */
-    footer{background:#c5e1ff;padding:3rem 0 1rem;text-align:center;font-size:.85rem;color:#002c55}
-    footer .foot-links{display:flex;justify-content:center;gap:1.5rem;margin:1rem 0}
-    /* media */
-    @media (width>900px){.hero-grid{grid-template-columns:1fr 1fr}}
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #e9f5ff;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1200px, 90%);
+      margin-inline: auto;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #ff6400;
+      color: #fff;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: #e95a00;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    header {
+      background: #ffffffaa;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #ff6400;
+    }
+
+    .hero {
+      position: relative;
+      padding: 4rem 0 6rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 30%, #00ffd0, #0064ff 60%, transparent 70%);
+      opacity: 0.55;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+      font-weight: 800;
+      color: #00396b;
+    }
+
+    .hero p {
+      margin-bottom: 1.5rem;
+      max-width: 35ch;
+    }
+
+    .hero .visual {
+      width: 100%;
+      height: 220px;
+      background: #cfe3ff;
+      border-radius: 8px;
+    }
+
+    .classes {
+      padding: 4rem 0;
+      position: relative;
+    }
+
+    .slider-wrapper {
+      position: relative;
+    }
+
+    .arrow-btn {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      background: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      color: #00396b;
+      transition: background 0.2s;
+      z-index: 5;
+    }
+
+    .arrow-btn:hover {
+      background: #ff6400;
+      color: #fff;
+    }
+
+    .arrow-left {
+      left: -20px;
+    }
+
+    .arrow-right {
+      right: -20px;
+    }
+
+    .card-track {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding-bottom: 0.5rem;
+    }
+
+    .card-track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .card {
+      min-width: 280px;
+      flex: 0 0 auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thumb {
+      height: 140px;
+      background: #d7e8ff;
+    }
+
+    .card-content {
+      padding: 1rem;
+      flex: 1;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: #00396b;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    .events {
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .event-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+    }
+
+    .event-card .icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-title {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .testimonials {
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      padding: 1.5rem;
+    }
+
+    .testimonial-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .testimonial-info .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #cfe3ff;
+    }
+
+    .stars {
+      font-size: 0.9rem;
+      color: #ffb400;
+      margin-bottom: 0.5rem;
+    }
+
+    .about {
+      padding: 4rem 0;
+    }
+
+    .about p {
+      max-width: 60ch;
+    }
+
+    footer {
+      background: #c5e1ff;
+      padding: 3rem 0 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #002c55;
+    }
+
+    footer .foot-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    @media (width > 900px) {
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- body content remains unchanged -->
+</body>
+</html>
   </style>
 </head>
 <body>
@@ -73,7 +317,7 @@
     <div class="container">
       <nav>
         <a href="#" class="logo"><img src="https://via.placeholder.com/120x40?text=Rhythmix" alt="Rhythmix Logo"></a>
-        <div class="nav-links"><a>Home</a><a href="courses.html">Courses</a><a href="schedule.html">Schedule</a><a href="gallery.html">Gallery</a><a href="contact-us.html">Contact Us</a></div>
+        <div class="nav-links"><a href="index.html">Home</a><a href="courses.html">Courses</a><a href="schedule.html">Schedule</a><a href="gallery.html">Gallery</a><a href="contact-us.html">Contact Us</a></div>
       </nav>
     </div>
   </header>
@@ -139,71 +383,16 @@
   </footer>
 
   <script>
-  const track = document.getElementById('classTrack');
-  const section = document.getElementById('classes');
-  const leftBtn = document.querySelector('.arrow-left');
-  const rightBtn = document.querySelector('.arrow-right');
+    const track=document.getElementById('classTrack');
+    const btnPrev=document.querySelector('.arrow-left');
+    const btnNext=document.querySelector('.arrow-right');
 
-  const scrollStep = 1;           // pixels per frame
-  const scrollDistance = 300;     // how far to scroll each time
-  const scrollInterval = 0;    // 5 seconds
-
-  let isPaused = false;
-  let isAutoScrolling = false;
-
-  // Smooth scroll animation using requestAnimationFrame
-  function smoothScrollBy(distance) {
-    let scrolled = 0;
-    function step() {
-      const stepAmount = Math.min(scrollStep, Math.abs(distance - scrolled));
-      track.scrollLeft += distance < 0 ? -stepAmount : stepAmount;
-      scrolled += stepAmount;
-
-      if (scrolled < Math.abs(distance)) {
-        requestAnimationFrame(step);
-      }
+    function scrollByCard(dir){
+      const cardWidth=track.querySelector('.card').offsetWidth+24; // 24 = gap
+      track.scrollBy({left:dir*cardWidth,behavior:'smooth'});
     }
-    requestAnimationFrame(step);
-  }
-
-  // Auto-scroll logic
-  function autoSlide() {
-    if (isPaused || isAutoScrolling) return;
-    isAutoScrolling = true;
-
-    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
-    const distance = atEnd ? -track.scrollLeft : scrollDistance;
-    smoothScrollBy(distance);
-
-    setTimeout(() => {
-      isAutoScrolling = false;
-    }, 800); // avoid overlap
-  }
-
-  // Run autoSlide every X ms
-  setInterval(autoSlide, scrollInterval);
-
-  // Pause on hover
-  section.addEventListener('mouseenter', () => {
-    isPaused = true;
-  });
-
-  section.addEventListener('mouseleave', () => {
-    isPaused = false;
-  });
-
-  // Arrow navigation
-  leftBtn.addEventListener('click', () => {
-    smoothScrollBy(-scrollDistance);
-  });
-
-  rightBtn.addEventListener('click', () => {
-    smoothScrollBy(scrollDistance);
-  });
-</script>
-
-
-
-
+    btnPrev.addEventListener('click',()=>scrollByCard(-1));
+    btnNext.addEventListener('click',()=>scrollByCard(1));
+  </script>
 </body>
 </html>

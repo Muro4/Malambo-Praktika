@@ -3,92 +3,140 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Schedule · Latino Dance School</title>
+  <title>Schedule · Rhythmix Dance School</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #e3f4ff;
+    *, *::before, *::after {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    header {
-      background-color: #cceeff;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #e9f5ff;
     }
 
-    header .logo {
-      font-weight: bold;
-      font-size: 1.2rem;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    nav a {
-      margin-left: 15px;
+    a {
       text-decoration: none;
-      color: #000;
+      color: inherit;
     }
 
-    nav a.active {
-      font-weight: bold;
-      color: #ff5733;
+    .container {
+      width: min(1200px, 90%);
+      margin-inline: auto;
+    }
+
+    header {
+      background: #ffffffaa;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-weight: 500;
+    }
+
+    .nav-links a:hover {
+      color: #ff6400;
+    }
+
+    .logo img {
+      height: 40px;
     }
 
     main {
-      padding: 40px 20px;
+      padding: 4rem 0;
       text-align: center;
     }
 
     h1.page-title {
-      font-size: 2rem;
-      color: #063b64;
-      margin-bottom: 30px;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 800;
+      color: #00396b;
+      margin-bottom: 2rem;
     }
 
     .schedule-wrapper {
       display: grid;
-      gap: 40px;
+      gap: 3rem;
       justify-content: center;
       align-items: center;
+      padding: 0 1rem;
     }
 
     .big-slot,
     .small-slot {
-      background-color: #d9d9d9;
+      background-color: #d9e8ff;
       border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
 
     .big-slot {
-      width: 90%;
+      width: 100%;
+      max-width: 900px;
       height: 400px;
-      margin-inline: auto;
+      margin: 0 auto;
     }
 
     .small-slot {
-      width: 50%;
-      height: 350px;
-      margin-inline: auto;
+      width: 100%;
+      max-width: 600px;
+      height: 300px;
+      margin: 0 auto;
     }
 
     footer {
-      background-color: #cceeff;
+      background: #c5e1ff;
+      padding: 3rem 0 1rem;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
+      font-size: 0.85rem;
+      color: #002c55;
     }
 
-    footer a {
-      text-decoration: none;
-      color: #000;
-      margin: 0 10px;
+    footer .foot-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    footer .logo img {
+      height: 30px;
+      margin-bottom: 1rem;
     }
 
     @media (max-width: 768px) {
+      .schedule-wrapper {
+        gap: 2rem;
+      }
+
       .small-slot {
-        width: 80%;
+        height: 250px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: flex-end;
       }
     }
   </style>
@@ -98,14 +146,20 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo">Latino Dance School</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="schedule.html" class="active">Schedule</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">
+          <img src="https://via.placeholder.com/120x40?text=Rhythmix" alt="Rhythmix Logo">
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <!-- MAIN -->
@@ -114,23 +168,29 @@
 
     <div class="schedule-wrapper">
       <div class="big-slot">
-        <!-- ⬅ Put your full timetable image or table here -->
+        <!-- You can embed a table or an image of your weekly schedule here -->
       </div>
 
       <div class="small-slot">
-        <!-- ⬅ Put a monthly summary or secondary widget here -->
+        <!-- Optional: Monthly overview or announcement box -->
       </div>
     </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2023 Latino Dance School</p>
-    <p>Follow us on social media!</p>
-    <p>
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Service</a>
-    </p>
+    <div class="container">
+      <a href="#top" class="logo">
+        <img src="https://via.placeholder.com/100x30?text=Rhythmix" alt="Rhythmix logo">
+      </a>
+      <div class="foot-links">
+        <a href="#">Follow us on social media</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <p>© 2025 Rhythmix Dance School</p>
+    </div>
   </footer>
+
 </body>
 </html>

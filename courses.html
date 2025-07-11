@@ -1,200 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Courses</title>
-  <link rel="stylesheet" href="courses.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses · Latino Dance School</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #e9f5ff;
+      margin: 0;
+      color: #333;
+    }
+
+    header {
+      background: #ffffffaa;
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      width: min(1200px, 90%);
+      margin: 0 auto;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .nav-links a:hover {
+      color: #ff6400;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    main {
+      padding: 40px 20px 100px;
+      text-align: center;
+    }
+
+    h1.page-title {
+      font-size: 2rem;
+      color: #063b64;
+      margin-bottom: 40px;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .course-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background: #d9d9d9;
+    }
+
+    .course-card .info {
+      background: #def2ff;
+      padding: 15px 20px;
+      text-align: left;
+    }
+
+    .course-card .info h3 {
+      font-size: 1.1rem;
+      margin: 0 0 5px;
+      font-weight: 600;
+    }
+
+    .course-card .info .meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .sign-up-wrapper {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .orange-btn {
+      background-color: #ff6400;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .orange-btn:hover {
+      background-color: #e55500;
+    }
+
+    footer {
+      background-color: #cceeff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: #000;
+      margin: 0 10px;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- HEADER -->
   <header>
-    <div class="logo">Latino Dance School</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a>Courses</a>
-      <a href="#">Schedule</a>
-      <a href="#">Gallery</a>
-      <a href="contact-us.html">Contact Us</a>
-    </nav>
-    <style>
-        body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #e3f4ff;
-}
-
-/* Header */
-header {
-  background-color: #cceeff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-}
-
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: black;
-}
-
-/* Courses Grid */
-main {
-  padding: 40px 20px;
-}
-
-.courses-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.course-card {
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.course-image {
-  background-color: #dcdcdc;
-  height: 180px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #555;
-  font-size: 14px;
-  padding: 10px;
-  text-align: center;
-}
-
-.course-info {
-  padding: 10px 15px;
-  background-color: #e9f7ff;
-}
-
-.course-title {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.course-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 13px;
-}
-
-.signup {
-  text-decoration: none;
-  color: #0044cc;
-  font-weight: bold;
-}
-
-/* Footer */
-footer {
-  background-color: #cceeff;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  margin-top: 40px;
-}
-
-footer a {
-  text-decoration: none;
-  color: black;
-}
-    </style>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">
+          <img src="https://via.placeholder.com/120x40?text=Rhythmix" alt="Rhythmix Logo">
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
+  <!-- MAIN -->
   <main>
-    <section class="courses-grid">
-      <!-- Repeat for each course -->
+    <h1 class="page-title">Our Dance Courses</h1>
+    <div class="course-grid">
       <div class="course-card">
-        <div class="course-image">Placeholder and Teachers</div>
-        <div class="course-info">
-          <div class="course-title">Bachata Dance</div>
-          <div class="course-meta">
+        <img src="https://via.placeholder.com/400x180?text=Bachata" alt="Bachata">
+        <div class="info">
+          <h3>Bachata Dance</h3>
+          <div class="meta">
             <span>Bachata</span>
             <span>All Levels Welcome</span>
-            <a href="#" class="signup">Sign Up</a>
           </div>
         </div>
       </div>
+      <div class="course-card">
+        <img src="https://via.placeholder.com/400x180?text=Salsa" alt="Salsa">
+        <div class="info">
+          <h3>Salsa Dance</h3>
+          <div class="meta">
+            <span>Salsa</span>
+            <span>All Levels Welcome</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://via.placeholder.com/400x180?text=Kizomba" alt="Kizomba">
+        <div class="info">
+          <h3>Kizomba Dance</h3>
+          <div class="meta">
+            <span>Kizomba</span>
+            <span>All Levels Welcome</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://via.placeholder.com/400x180?text=Zouk" alt="Zouk">
+        <div class="info">
+          <h3>Zouk Dance</h3>
+          <div class="meta">
+            <span>Zouk</span>
+            <span>All Levels Welcome</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://via.placeholder.com/400x180?text=Lady+Style" alt="Lady Style">
+        <div class="info">
+          <h3>Lady Style</h3>
+          <div class="meta">
+            <span>Styling</span>
+            <span>All Levels Welcome</span>
+          </div>
+        </div>
+      </div>
+      <div class="course-card">
+        <img src="https://via.placeholder.com/400x180?text=Urban+Kiz" alt="Urban Kiz">
+        <div class="info">
+          <h3>Bachata advanced
+          </h3>
+          <div class="meta">
+            <span>Advanced</span>
+            <span>All Levels Welcome</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <div class="course-card">
-        <div class="course-image">Placeholder and Teachers</div>
-        <div class="course-info">
-          <div class="course-title">Bachata Dance</div>
-          <div class="course-meta">
-            <span>Bachata</span>
-            <span>All Levels Welcome</span>
-            <a href="#" class="signup">Sign Up</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Add additional cards here (you can repeat or loop dynamically) -->
-      <div class="course-card">
-        <div class="course-image">Sasha Bane</div>
-        <div class="course-info">
-          <div class="course-title">Bachata Dance</div>
-          <div class="course-meta">
-            <span>Bachata</span>
-            <span>All Levels Welcome</span>
-            <a href="#" class="signup">Sign Up</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-image">Placeholder and Teachers</div>
-        <div class="course-info">
-          <div class="course-title">Bachata Dance</div>
-          <div class="course-meta">
-            <span>Bachata</span>
-            <span>All Levels Welcome</span>
-            <a href="#" class="signup">Sign Up</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-image">Bachata Dance</div>
-        <div class="course-info">
-          <div class="course-title">Bachata Dance</div>
-          <div class="course-meta">
-            <span>Bachata</span>
-            <span>All Levels Welcome</span>
-            <a href="#" class="signup">Sign Up</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="course-card">
-        <div class="course-image">Bachata Dance</div>
-        <div class="course-info">
-          <div class="course-title">Bachata Dance</div>
-          <div class="course-meta">
-            <span>Bachata</span>
-            <span>All Levels Welcome</span>
-            <a href="#" class="signup">Sign Up</a>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="sign-up-wrapper">
+      <a href="#" class="orange-btn">Sign Up for a Course</a>
+    </div>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2023 Latino Dance School</p>
     <p>Follow us on social media!</p>
-    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
+    </p>
   </footer>
 </body>
 </html>
