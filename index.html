@@ -30,8 +30,16 @@
     .arrow-btn:hover{background:#ff6400;color:#fff}
     .arrow-left{left:-20px}
     .arrow-right{right:-20px}
-    .card-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:.5rem}
-    .card-track::-webkit-scrollbar{display:none}
+    .card-track{display:flex;gap:1.5rem;overflow-x:auto;scroll-behavior:smooth;padding-bottom:.5rem}
+    .card-track::-webkit-scrollbar{height: 8px;}
+    .card-track::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.card-track::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
     .card{min-width:280px;flex:0 0 auto;background:#fff;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.05);overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column}
     .thumb{height:140px;background:#d7e8ff}
     .card-content{padding:1rem;flex:1}
@@ -131,16 +139,71 @@
   </footer>
 
   <script>
-    const track=document.getElementById('classTrack');
-    const btnPrev=document.querySelector('.arrow-left');
-    const btnNext=document.querySelector('.arrow-right');
+  const track = document.getElementById('classTrack');
+  const section = document.getElementById('classes');
+  const leftBtn = document.querySelector('.arrow-left');
+  const rightBtn = document.querySelector('.arrow-right');
 
-    function scrollByCard(dir){
-      const cardWidth=track.querySelector('.card').offsetWidth+24; // 24 = gap
-      track.scrollBy({left:dir*cardWidth,behavior:'smooth'});
+  const scrollStep = 1;           // pixels per frame
+  const scrollDistance = 300;     // how far to scroll each time
+  const scrollInterval = 0;    // 5 seconds
+
+  let isPaused = false;
+  let isAutoScrolling = false;
+
+  // Smooth scroll animation using requestAnimationFrame
+  function smoothScrollBy(distance) {
+    let scrolled = 0;
+    function step() {
+      const stepAmount = Math.min(scrollStep, Math.abs(distance - scrolled));
+      track.scrollLeft += distance < 0 ? -stepAmount : stepAmount;
+      scrolled += stepAmount;
+
+      if (scrolled < Math.abs(distance)) {
+        requestAnimationFrame(step);
+      }
     }
-    btnPrev.addEventListener('click',()=>scrollByCard(-1));
-    btnNext.addEventListener('click',()=>scrollByCard(1));
-  </script>
+    requestAnimationFrame(step);
+  }
+
+  // Auto-scroll logic
+  function autoSlide() {
+    if (isPaused || isAutoScrolling) return;
+    isAutoScrolling = true;
+
+    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 5;
+    const distance = atEnd ? -track.scrollLeft : scrollDistance;
+    smoothScrollBy(distance);
+
+    setTimeout(() => {
+      isAutoScrolling = false;
+    }, 800); // avoid overlap
+  }
+
+  // Run autoSlide every X ms
+  setInterval(autoSlide, scrollInterval);
+
+  // Pause on hover
+  section.addEventListener('mouseenter', () => {
+    isPaused = true;
+  });
+
+  section.addEventListener('mouseleave', () => {
+    isPaused = false;
+  });
+
+  // Arrow navigation
+  leftBtn.addEventListener('click', () => {
+    smoothScrollBy(-scrollDistance);
+  });
+
+  rightBtn.addEventListener('click', () => {
+    smoothScrollBy(scrollDistance);
+  });
+</script>
+
+
+
+
 </body>
 </html>
