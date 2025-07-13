@@ -8,259 +8,289 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
   body {
-  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: #333;
-      background: #e9f5ff;
-}
-
-header {
-      background: #ffffffaa;
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.5rem;
-      font-weight: 500;
-    }
-
-    .nav-links a:hover {
-      color: #ff6400;
-    }
-
-.logo {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: black;
-}
-
-/* === Main Section === */
-main {
-  padding: 40px 20px;
-}
-
-/* === Contact Section === */
-.contact-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 60px;
-  margin-left: 5%;
-}
-
-.form-container {
-  flex: 0 0 36%;
-  min-width: 300px;
-  max-width: 380px;
-}
-
-.form-container h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.highlight {
-  color: #ff5733;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-input,
-textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-textarea {
-  resize: vertical;
-}
-
-button {
-  background-color: #ff5733;
-  color: white;
-  padding: 10px;
-  border: none;
-  font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* === Info/Map Section === */
-.info-container {
-  flex: 0 0 60%;
-  min-width: 300px;
-}
-
-.map iframe {
-  width: 100%;
-  height: 260px;
-  border-radius: 8px;
-  border: none;
-}
-
-/* === Contact Info === */
-.contact-info {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  font-size: 14px;
-}
-
-.contact-info li {
-  margin: 10px 0;
-}
-
-.contact-info i {
-  margin-right: 8px;
-  color: #333;
-}
-
-/* === Social Icons === */
-.socials {
-  font-size: 18px;
-  margin-top: 10px;
-}
-
-.socials i {
-  margin-right: 15px;
-  cursor: pointer;
-}
-
-/* === About Section === */
-.about-section {
-  margin-top: 40px;
-  text-align: center;
-}
-
-.about-section h2 {
-  margin-bottom: 15px;
-}
-
-.about-section p {
-  max-width: 800px;
-  margin: auto;
-  line-height: 1.6;
-  font-size: 15px;
-}
-
-/* === Footer === */
-footer {
-  background-color: #cceeff;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-}
-
-footer a {
-  text-decoration: none;
-  color: black;
-}
-
-/* === Responsive === */
-@media (max-width: 768px) {
-  .contact-section {
-    flex-direction: column;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #e9f5ff;
   }
 
-  .form-container,
+  *
+  {
+    margin: 0px;
+    padding: 0px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background: #ffffffaa;
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo img {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: #ff6400;
+  }
+
+  .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: black;
+  }
+
+  /* === Main Section === */
+  main {
+    padding: 40px 20px;
+  }
+
+  /* === Contact Section === */
+  .contact-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+
+  .form-container {
+    flex: 0 0 36%;
+    min-width: 300px;
+    max-width: 380px;
+  }
+
+  .form-container h1 {
+
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .highlight {
+    color: #ff5733;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    background-color: #ff5733;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* === Info/Map Section === */
   .info-container {
-    flex: 1 1 100%;
+    flex: 0 0 60%;
+    min-width: 300px;
   }
 
   .map iframe {
-    height: 200px;
+    width: 100%;
+    height: 260px;
+    border-radius: 8px;
+    border: none;
   }
-}
-</style>
+
+  /* === Contact Info === */
+  .contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+
+  .contact-info li {
+    margin: 10px 0;
+  }
+
+  .contact-info i {
+    margin-right: 8px;
+    color: #333;
+  }
+
+  /* === Social Icons === */
+  .socials {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .socials i {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  /* === About Section === */
+  .about-section {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .about-section h2 {
+    margin-bottom: 15px;
+  }
+
+  .about-section p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  /* === Footer === */
+  footer {
+    background-color: #cceeff;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  footer a {
+    text-decoration: none;
+    color: black;
+  }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .contact-section {
+      flex-direction: column;
+    }
+
+    .form-container,
+    .info-container {
+      flex: 1 1 100%;
+    }
+
+    .map iframe {
+      height: 200px;
+    }
+  }
+  </style>
 </head>
 <body>
- <header>
-  <div class="container">
-    <nav>
-      <a href="#" class="logo">
-        <img src="https://via.placeholder.com/120x40?text=Rhythmix" alt="Rhythmix Logo">
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="schedule.html">Schedule</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact-us.html">Contact Us</a>
-      </div>
-    </nav>
-  </div>
-</header>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">
+          <img src="img/logo mALAMBO.png" alt="Rhythmix Logo">
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="courses.html">Courses</a>
+          <a href="schedule.html">Schedule</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <section class="contact-section">
-      <div class="form-container">
-        <h1>Contact <span class="highlight">us</span></h1>
-        <form>
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <textarea placeholder="Message" rows="5" required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-
-      <div class="info-container">
-        <div class="map">
-          <iframe src="https://maps.google.com/maps?q=Skopje&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
+    <div class="container">
+      <section class="contact-section">
+        <div class="form-container">
+          <h1>Contact <span class="highlight">us</span></h1>
+          <form>
+            <input type="text" placeholder="Name" required />
+            <input type="email" placeholder="Email" required />
+            <textarea placeholder="Message" rows="5" required></textarea>
+            <button type="submit">Submit</button>
+          </form>
         </div>
-        <ul class="contact-info">
-          <li><i class="fas fa-map-marker-alt"></i> Vero Mall, 1st floor, Skopje</li>
-          <li><i class="fas fa-user"></i> Марта Анчевска - 088 / 503 193</li>
-          <li><i class="fas fa-user"></i> Мартина Блажевска - 078 / 612 724</li>
-          <li><i class="fas fa-envelope"></i> clubmambo@macmail.cg</li>
-        </ul>
-        <div class="socials">
-          <i class="fab fa-facebook-f"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-youtube"></i>
-        </div>
-      </div>
-    </section>
 
-    <section class="about-section">
-      <h2>About Us</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
-    </section>
+        <div class="info-container">
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d611.2308200461051!2d27.889476113257583!3d43.21955274130503!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a454097334c493%3A0x222fd22291d997de!2sSalsa%20Club%20Malambo%20Varna!5e0!3m2!1sen!2sbg!4v1752419172507!5m2!1sen!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+          <ul class="contact-info">
+            <li><i class="fas fa-map-marker-alt"></i> Varna Mall, g.k. TroshevoMladost, бул. „Владислав Варненчик“ 186, 9009 Varna</li>
+            <li><i class="fas fa-user"></i> Мария Лилянова - 0888 / 539 188</li>
+            <li><i class="fas fa-user"></i> Мартин Бозуров - 0878 / 377274</li>
+            <li><i class="fas fa-envelope"></i> clubmambo@macmail.cg</li>
+          </ul>
+          <div class="socials">
+              <a href="https://www.facebook.com/Malambodanceschool/"><i class="fab fa-facebook-f"></i></a>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-section">
+        <h2>About Us</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </section>
+    </div>
   </main>
 
   <footer>
-    <p>© 2023 Latino Dance School</p>
-    <p>Follow us on social media!</p>
-    <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
-  </footer>
+  <nav style="display: flex; flex-direction: column; align-items: center; gap: 10px; padding-bottom: 20px;">
+    <a href="#" class="logo">
+      <img src="img/logo mALAMBO.png" style="max-height: 70px;">
+    </a>
+    <div class="nav-links" style="display: flex; gap: 1.5rem; font-weight: 500; flex-wrap: wrap; justify-content: center;">
+      <a href="index.html">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact-us.html">Contact Us</a>
+    </div>
+  </nav>
+  <p>© 2006 Malambo dance school</p>
+  
+</footer>
 </body>
 </html>
